@@ -18,8 +18,7 @@ function Main({
   React.useEffect(() => {
     Promise.all([api.getUserProfile(), api.getInitialCards()])
       .then((res) => {
-        const userProfile = res[0];
-        const cards = res[1];
+        const [userProfile, cards] = res;
         setUserAvatar(userProfile.avatar);
         setUserDescription(userProfile.about);
         setUserName(userProfile.name);
@@ -31,13 +30,11 @@ function Main({
   return (
     <main className="main">
       <section className="profile">
-        <div className="profile__container profile__container-avatar">
-          <img
-            className="profile__avatar"
-            onClick={onEditAvatar}
-            src={userAvatar}
-            alt="аватарка"
-          />
+        <div
+          className="profile__container profile__container-avatar"
+          onClick={onEditAvatar}
+        >
+          <img className="profile__avatar" src={userAvatar} alt="аватарка" />
           <img
             className="profile__button-avatar"
             src={editProfile}
