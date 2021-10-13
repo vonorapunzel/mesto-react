@@ -20,7 +20,8 @@ class Api {
       headers: this._headers,
       body: JSON.stringify(data),
     }).then((response) => {
-      this._getResponseData(response);
+      const result = this._getResponseData(response);
+      return result
     });
   }
 
@@ -83,11 +84,10 @@ class Api {
     return fetch(`${this._url}/users/me/avatar`, {
       method: "PATCH",
       headers: this._headers,
-      body: JSON.stringify({
-        avatar: data.avatar,
-      }),
+      body: JSON.stringify(data),
     }).then((response) => {
-      this._getResponseData(response);
+      const result = this._getResponseData(response);
+      return result
     });
   }
 }
