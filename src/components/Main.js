@@ -13,9 +13,8 @@ function Main({
   onCardDelete,
   cards,
 }) {
-  
   const currentUser = React.useContext(CurrentUserContext);
-  
+
   return (
     <main className="main">
       <section className="profile">
@@ -51,14 +50,13 @@ function Main({
       </section>
       <section className="elements">
         {cards.map((card) => (
-          <article key={card._id} className="element">
-            <Card
-              card={card}
-              onCardClick={onCardClick}
-              onCardDelete={onCardDelete}
-              onCardLike={onCardLike}
-            />
-          </article>
+          <Card
+            key={card._id}
+            card={card}
+            onCardClick={onCardClick}
+            onCardDelete={onCardDelete}
+            onCardLike={onCardLike}
+          />
         ))}
       </section>
       {children}

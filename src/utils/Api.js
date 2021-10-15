@@ -21,7 +21,7 @@ class Api {
       body: JSON.stringify(data),
     }).then((response) => {
       const result = this._getResponseData(response);
-      return result
+      return result;
     });
   }
 
@@ -87,7 +87,7 @@ class Api {
       body: JSON.stringify(data),
     }).then((response) => {
       const result = this._getResponseData(response);
-      return result
+      return result;
     });
   }
 }
