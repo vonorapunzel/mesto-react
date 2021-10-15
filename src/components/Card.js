@@ -1,7 +1,7 @@
 import React from "react";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
-function Card({ key, card, onCardClick, onCardDelete, onCardLike }) {
+function Card({ card, onCardClick, onCardDelete, onCardLike }) {
   function handleClick() {
     onCardClick(card);
   }
@@ -23,7 +23,7 @@ function Card({ key, card, onCardClick, onCardDelete, onCardLike }) {
     !isLiked ? "element__like" : "element__like_active"
   }`;
   return (
-    <article key={key} className="element">
+    <article className="element">
       <button
         className={cardDeleteButtonClassName}
         onClick={handleDeleteClick}
